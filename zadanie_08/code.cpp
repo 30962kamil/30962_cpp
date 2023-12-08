@@ -27,10 +27,11 @@ cities[A] = {"Bikini Bottom","Rock Bottom","Tentacle Acres", "Bass Vegas","Dulls
 streets[A] = {"Jellyfish", "Krusty", "Bubble", "Mermaid", "Kelp", "Coral", "Barnacle", "Anemone", "Square", "Goo"};
 
 string r_names[R], r_surnames[R], r_countries[R], r_cities[R], r_streets[R];
-int rok[R], nr_dom[R];
+int rok[R], nr_dom[R], nr_phone1[R], nr_phone2[R], nr_phone3[R];
 
 int main()
 {
+    cout << "NR - NAME & SURNAME - COUNTRY - CITY - STREET - Y.O. - HOUSE NR - PHONE NUMBER \n --------------------------------------------------------------------------------- \n";
     for (int i = 0; i < R; i++) {
         r_names[i] = names[random()];
         r_surnames[i] = surnames[random()];
@@ -39,14 +40,18 @@ int main()
         r_streets[i] = streets[random()];
         rok[i] = rl(0, 4000) - 2000;
         nr_dom[i] = rl(0, 77);
-        cout << i+1;
+        nr_phone1[i] = rl(100, 999);
+        nr_phone2[i] = rl(100, 999);
+        nr_phone3[i] = rl(100, 999);
+        cout << i+1 << ". ";
         cout << r_names[i] << " ";
-        cout << r_surnames[i] << " ";
-        cout << r_countries[i] << " ";
-        cout << r_cities[i] << " "; 
-        cout << r_streets[i] << " ";
-        cout << rok[i] << " ";
-        cout << nr_dom[i] << " \n";
+        cout << r_surnames[i] << " | ";
+        cout << r_countries[i] << " | ";
+        cout << r_cities[i] << " | "; 
+        cout << r_streets[i] << " | ";
+        cout << rok[i] << " | ";
+        cout << nr_dom[i] << " | ";
+        cout << nr_phone1[i] << "-" << nr_phone2[i] << "-" << nr_phone3[i] << "\n";
         
     }
 
