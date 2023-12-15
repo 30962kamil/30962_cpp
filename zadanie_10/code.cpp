@@ -1,71 +1,39 @@
 #include <iostream>
+#include <random>
 using namespace std;
-const int c = 3, r = 5;
+const int c = 200, r = 10;
+int rl(int a, int b)
+{
+	random_device dev;
+	mt19937 rng(dev());
+	uniform_int_distribution<mt19937::result_type> dist6(a, b); // distribution in range [a, b]
+	return dist6(rng);
+}
 int main()
 {
-	string d2_array[r][c] /* = {
-		{"00", "01", "02" },
-		{"10", "11", "12" },
-		{"20", "21", "22" },
-		{"30", "31", "32" },
-		{"40", "41", "42" },
-		 
-	}*/;
+	int d2_array[r][c];
 	int row, column;
-									//  checker
+
+									// RANDOM NR GENERATOR (-100, 100)
 	for (row = 0; row < r; row++)
 	{
 		for (column = 0; column < c; column++)
 		{
-			cout << "Array[" << row << "]" << "[" << column << "] = ";
-			cout << d2_array[row][column] << " \n";
+			d2_array[row][column] = rl(0, 200) - 100;
 		}
-								
 	}
-									//  changer
+									// MAX VALUE
 	for (row = 0; row < r; row++)
 	{
-		for (column = 0; column < c; column++) 
+		int highNum = -100;
+		for (column = 0; column < c; column++)
 		{
-			cout << "Insert data to array(" << row << ", " << column << ")";
-			cin >> d2_array[row][column];
-		
+			if (d2_array[row][column] > highNum)
+				highNum = d2_array[row][column];
 		}
+		cout << "Max value for row " << row << " is: " << highNum;
+		if (highNum < 80) { cout << " !*!*!*!*!*!*!*!*!*!*!*!"; }
 		cout << endl;
 	}
-									// row plus column display
-	for (row = 0; row < r; row++)
-	{
-		for (column = 0; column < c; column++)
-		{
-			cout << d2_array[row][column] << " ";
-		}
-		cout << endl;
-	}
-									// checker
-	for (row = 0; row < r; row++)
-	{
-		for (column = 0; column < c; column++)
-		{
-			cout << "Array[" << row << "]" << "[" << column << "] = ";
-			cout << d2_array[row][column] << " \n";
-		}
-
-	}
-
+	return 0;
 }
-
-/*for (row = 0; row < r; row++)
-{
-	for (column = 0; column < c; column++)
-	{
-		cout << d2_array[row][column] << " ";
-	}
-	cout << endl;
-}
-	}
-	for (int i = 0; i < r * c; i++) {
-		cout << "Array[" << row << "]" << "[" << column << "]" << endl;
-		row + 1; column + 1;
-	}
-*/
