@@ -1,0 +1,1 @@
+zadanie zostało przeprowadzone, a wiadomości utrwalone.
