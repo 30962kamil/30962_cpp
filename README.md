@@ -1,3 +1,2 @@
-# 30962_cpp
-first repository
-this is my first commit
+# C++
+Zbiór zadań realizowanych w ramach kursu programowania strukturalnego na studiach. Zagadnienia: zmienne, pętle, funkcje, tablice, klasy.
